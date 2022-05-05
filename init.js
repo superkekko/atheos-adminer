@@ -21,12 +21,6 @@
 
 	let self = false;
 
-	function login($login, $password) {
-		// validate user submitted credentials
-		return ($login == 'atheos' && $password == 'Ath30s2022');
-	}
-
-
 	// Initiates plugin as a third priority in the system.
 	carbon.subscribe('system.loadExtra', () => atheos.Adminer.init());
 
