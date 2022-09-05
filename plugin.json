@@ -4,10 +4,10 @@
 	"description": "Adminer port for Atheos",
 	"category": "Common",
 	"status": "available",
-	"version": "v1.0.0",
+	"version": "v1.1.0",
 	"url": "https://github.com/superkekko/atheos-adminer",
 	"rightbar": [{
-		"action": "atheos.Adminer.open();",
+		"action": "atheos.adminer.open();",
 		"icon": "fas fa-database",
 		"title": "Adminer"
 	}]
