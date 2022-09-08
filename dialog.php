@@ -7,13 +7,11 @@
 // This information must remain intact.
 //////////////////////////////////////////////////////////////////////////////80
 
-$path = POST("path");
-
 switch ($action) {
 
 	case 'open': ?>
 		<label class="title"><i class="fas fa-database"></i>Adminer</label>
-		<iframe src="<?php echo $path.'/plugins/Adminer/loader.php';?>" style="width:1200px; height:800px"></iframe>	
+		<iframe id="adminer" src="<?php echo $path.'/plugins/Adminer/loader.php';?>" style="width:1200px; height:800px"></iframe>	
 		<?php
 		break;
 

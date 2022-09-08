@@ -6,7 +6,7 @@
 // This information must remain intact.
 //////////////////////////////////////////////////////////////////////////////80
 // Description: 
-//	A plugin to open Adminner as modal
+//	A plugin to open Adminner as modal o new page
 //////////////////////////////////////////////////////////////////////////////80
 
 (function() {
@@ -17,21 +17,24 @@
 	carbon.subscribe('system.loadExtra', () => atheos.adminer.init());
 
 	atheos.adminer = {
-
+		
 		init: function() {
 			if (self) return;
 			self = this;
+			
 		},
 
 		open: function() {
-			var path = atheos.path + 'plugins/Adminer/editor.php';
-			//window.open(path);
-			atheos.modal.load(1000,{
-				target: 'Adminer',
-				action: 'open',
-				path: atheos.path
-			});
-			atheos.common.hideOverlay();
+			if(storage('adminer.modal')){
+				atheos.modal.load(1000,{
+					target: 'Adminer',
+					action: 'open',
+					path: atheos.path
+				});
+				atheos.common.hideOverlay();
+			}else{
+				window.open(atheos.path + 'plugins/Adminer/loader.php');
+			}
 		}
 	};
 
